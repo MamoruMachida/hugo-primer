@@ -95,6 +95,10 @@ aside {
     max-width: 1012px;
   }
   #side {
+    width: unset;
+    padding-left: 20px;
+  }
+  #side #toc {
     display: none;
   }
 }
