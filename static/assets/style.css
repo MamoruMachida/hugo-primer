@@ -84,6 +84,7 @@ aside {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 11px;
 }
 #toc ul {
   padding-left: 0.8rem;
