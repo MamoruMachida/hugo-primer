@@ -2,18 +2,22 @@
 html,
 body {
   height: 100%;
-  font-family: "Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
 .h-100 {
   height: 100%;
 }
+
 .markdown-body {
-  font-family: "Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   line-height: 1.8;
 }
+
 .Subhead-description .Label {
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
+
 #holy {
   display: grid;
   /* auto: as wide as its content
@@ -25,20 +29,25 @@ body {
     "main side"
     "footer footer";
 }
+
 #header {
   grid-area: header;
 }
+
 #main {
   grid-area: main;
   max-width: 782px;
 }
+
 #side {
   grid-area: side;
   width: 230px;
 }
+
 #footer {
   grid-area: footer;
 }
+
 aside {
   position: -webkit-sticky;
   position: sticky;
@@ -54,14 +63,17 @@ aside {
   flex-direction: column;
   justify-content: flex-end;
 }
+
 .dropdown:hover .dropdown-content {
   visibility: visible;
   opacity: 1;
 }
+
 .dropdown-content:hover {
   visibility: visible;
   opacity: 1;
 }
+
 .dropdown-content {
   visibility: hidden;
   opacity: 0;
@@ -78,17 +90,19 @@ aside {
   margin-top: 1.5rem;
   padding: 0.7rem;
 }
+
 #toc * {
   list-style: none;
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 11px;
 }
+
 #toc ul {
   padding-left: 0.8rem;
 }
+
 #toc li {
   margin-top: 0.3rem;
 }
@@ -97,16 +111,26 @@ aside {
   #holy {
     display: block;
   }
-  #header {
-  }
+
+  #header {}
+
   #main {
     max-width: 1012px;
   }
+
   #side {
     width: unset;
     padding-left: 20px;
   }
+
   #side #toc {
     display: none;
   }
+}
+
+/* utility */
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

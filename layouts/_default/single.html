@@ -31,12 +31,6 @@
   <section class="pb-6 mb-3 border-bottom text-gray">
     {{ .Content }}
   </section>
-
-  <section>
-    {{ if (default true .Params.comments) }}
-      {{ template "_internal/disqus.html" . }}
-    {{ end }}
-  </section>
 </article>
 {{ end }}
 
@@ -76,6 +70,34 @@
   {{ else }}
     <div>
       <!-- Do not share -->
+    </div>
+  {{ end }}
+  {{ $related := .Site.RegularPages.RelatedIndices . | first 5}}
+  {{ with $related }}
+    <div class="mt-5">
+      <h2>Related</h2>
+      <ul>
+        {{ range . }}
+          <li class="rounded-2 box-shadow-medium ml-2 px-3 pb-2 pt-2 mb-3">
+            <div class="Subhead mb-2">
+              <div class="Subhead-heading">
+                <a href="{{ .Permalink }}">
+                  <div class="h3 mt-1 mb-1">{{ .Title }}</div>
+                </a>
+              </div>
+              <div class="Subhead-description">
+                <div class="float-md-right">
+                  <span>{{ .Date.Format "2006-01-02" }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="text-gray ellipsis">
+              <!-- summary -->
+              {{ .Summary }}
+            </div>
+          </li>
+        {{ end }}
+      </ul>
     </div>
   {{ end }}
 {{ end }}
