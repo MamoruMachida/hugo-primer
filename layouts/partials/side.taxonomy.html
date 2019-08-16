@@ -4,10 +4,10 @@
     <a href="{{ "tags/" | relLangURL }}" class="link-gray-dark">
       <h4>Tags</h4>
     </a>
-    {{ range $name, $items := .Site.Taxonomies.tags }}
+    {{ range .Site.Taxonomies.tags }}
     <span class="css-truncate no-wrap m-1 pl-1">
-      <a href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}" class="link-gray text-emphasized css-truncate-target"><span class="">{{ $name }}</span></a>
-      <span class="text-right Counter">{{ len $items }}</span>
+      <a href="{{ .Page.RelPermalink }}" class="link-gray text-emphasized css-truncate-target"><span class="">{{ .Page.Title }}</span></a>
+      <span class="text-right Counter">{{ .Count }}</span>
     </span>
     {{ end }}
   </div>
@@ -19,10 +19,10 @@
     <a href="{{ "categories/" | relLangURL }}" class="link-gray-dark">
       <h4>Categories</h4>
     </a>
-    {{ range $name, $items := .Site.Taxonomies.categories }}
+    {{ range .Site.Taxonomies.categories }}
     <span class="css-truncate no-wrap m-1 pl-1">
-      <a href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}" class="link-gray text-emphasized css-truncate-target"><span class="">{{ $name }}</span></a>
-      <span class="text-right Counter">{{ len $items }}</span>
+      <a href="{{ .Page.RelPermalink }}" class="link-gray text-emphasized css-truncate-target"><span class="">{{ .Page.Title }}</span></a>
+      <span class="text-right Counter">{{ .Count }}</span>
     </span>
     {{ end }}
   </div>
