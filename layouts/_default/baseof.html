@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     {{ if not .Site.BuildDrafts }}
     {{ template "_internal/google_analytics_async.html" . }}
@@ -69,6 +69,12 @@
           </div>
           {{ end }}
         </aside>
+      </div>
+
+      <div id="extra" class="px-4 bg-white">
+        {{ block "extra" . }}
+        <div></div>
+        {{ end }}
       </div>
 
       <div id="footer" class="pt-2 pb-3 bg-white text-center">
