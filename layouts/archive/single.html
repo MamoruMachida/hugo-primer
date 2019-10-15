@@ -9,7 +9,7 @@
         <ul>
           {{ range .Pages.ByPublishDate.Reverse }}
             <li>
-              <a href="{{ $.Site.BaseURL }}{{ .Section }}">{{ .Section }}</a>
+              <a href="{{ $.Site.BaseURL }}{{ .Section }}">{{ .Section | humanize }}</a>
               <a href="{{ .RelPermalink }}">{{.Title}}</a>
             </li>
           {{ end }}
