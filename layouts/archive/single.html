@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<article>
+  <section>
+    <h1>{{ .Title }}</h1>
+    <ul>
+      {{ range $items := .Site.Taxonomies.archives.Alphabetical.Reverse }}
+        <li><a href="{{ $.Site.BaseURL }}archives/{{ .Name | urlize | lower }}">{{ .Name }}</a></li>
+        <ul>
+          {{ range .Pages.ByPublishDate.Reverse }}
+            <li>
+              <a href="{{ $.Site.BaseURL }}{{ .Section }}">{{ .Section }}</a>
+              <a href="{{ .RelPermalink }}">{{.Title}}</a>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </ul>
+  </section>
+</article>
+{{ end }}

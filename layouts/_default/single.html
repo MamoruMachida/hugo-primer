@@ -15,11 +15,11 @@
 
     {{ if ( default true .Params.showDate ) }}
     <div class="float-md-right">
-      <span title="Lastmod: {{ .Lastmod.Format "2006-01-02" }}. Published at: {{ .PublishDate.Format "2006-01-02" }}.">
+      <span title="Lastmod: {{ .Lastmod.Format "2006-01-02" }}. Published at: {{ .PublishDate.Format ( default "2006-01-02" .Site.Params.dateFormat ) }}.">
         {{ if ne .Lastmod .PublishDate }}
           Lastmod: {{ dateFormat ( default "2006-01-02" .Site.Params.dateFormat ) .Lastmod }}
         {{ else }}
-          Published: {{ dateFormat "2006-01-02" .PublishDate }}
+          Published: {{ dateFormat ( default "2006-01-02" .Site.Params.dateFormat ) .PublishDate }}
         {{ end }}
       </span>
     </div>
@@ -91,7 +91,13 @@
               <div class="Subhead-description">
                 {{ partial "taxonomy.html" . }}
                 <div class="float-md-right">
-                  <span>{{ .Date.Format "2006-01-02" }}</span>
+                  <span title="Lastmod: {{ .Lastmod.Format "2006-01-02" }}. Published at: {{ .PublishDate.Format ( default "2006-01-02" .Site.Params.dateFormat ) }}.">
+                    {{ if ne .Lastmod .PublishDate }}
+                      Lastmod: {{ dateFormat ( default "2006-01-02" .Site.Params.dateFormat ) .Lastmod }}
+                    {{ else }}
+                      Published: {{ dateFormat ( default "2006-01-02" .Site.Params.dateFormat ) .PublishDate }}
+                    {{ end }}
+                  </span>
                 </div>
               </div>
             </div>
