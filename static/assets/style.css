@@ -98,6 +98,7 @@ aside {
 #toc {
   margin-top: 1.5rem;
   padding: 0.7rem;
+  border-left: 1px solid #e1e4e8
 }
 
 #toc * {
@@ -106,6 +107,7 @@ aside {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #5e5e5e;
 }
 
 #toc ul {
@@ -114,6 +116,15 @@ aside {
 
 #toc li {
   margin-top: 0.3rem;
+}
+
+#toc a {
+  font-size: 12px;
+}
+
+#toc a:hover {
+  color: #1e88e5;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 1012px) {
