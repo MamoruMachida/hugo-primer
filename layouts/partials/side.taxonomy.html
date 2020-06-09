@@ -1,6 +1,6 @@
 <!-- Tags -->
 {{ if isset .Site.Taxonomies "tags" }}
-  <div class="Box Box--blue p-2 mb-3 mt-5">
+  <div class="p-2 mb-3 mt-5">
     <a href="{{ "tags/" | relLangURL }}" class="link-gray-dark">
       <h4>Tags</h4>
     </a>
@@ -15,7 +15,7 @@
 
 <!-- Categories -->
 {{ if isset .Site.Taxonomies "categories" }}
-  <div class="Box Box--blue p-2 mb-3">
+  <div class="p-2 mb-3">
     <a href="{{ "categories/" | relLangURL }}" class="link-gray-dark">
       <h4>Categories</h4>
     </a>
