@@ -1,5 +1,5 @@
 {{ define "title" }}
-  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ .Title }} &ndash; {{ .Site.Title }}
 {{ end }}
 
 
@@ -11,15 +11,16 @@
   {{ .Content }}
 
   {{ range .Paginator.Pages }}
-  <div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-2">
+  <div class="px-3 pb-2 pt-2 mb-2">
     <!-- single page card -->
     <div class="mb-2">
       <a href="{{ .RelPermalink }}" class="link-gray-dark"><span class="h2">{{ .Title }}</span></a>
       <span class="text-right Counter Counter--gray">{{ len .Pages }}</span>
     </div>
-    <div class="text-gray">
+    <div>
       {{ range first 5 .Pages }}
-      <a class="btn btn-transparent bg-blue-light link-gray mb-2" href="{{ .RelPermalink }}" role="button">{{ .Title }}</a>
+      <a class="btn btn-transparent bg-blue-light link-gray mb-2" href="{{ .RelPermalink }}"
+        role="button">{{ .Title }}</a>
       {{ end }}
 
       {{ if gt (len .Pages) 5 }}
@@ -39,5 +40,5 @@
 
 
 {{ define "side" }}
-  {{ partial "side.taxonomy.html" . }}
+{{ partial "side.taxonomy.html" . }}
 {{ end }}

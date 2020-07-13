@@ -9,10 +9,6 @@ body {
   height: 100%;
 }
 
-.markdown-body {
-  line-height: 1.8;
-}
-
 #holy {
   display: grid;
   /* auto: as wide as its content
@@ -29,7 +25,9 @@ body {
 #header {
   grid-area: header;
 }
+.UnderlineNav-item.selected {
 
+}
 #main {
   grid-area: main;
   max-width: 782px;

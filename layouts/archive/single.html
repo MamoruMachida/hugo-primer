@@ -1,3 +1,16 @@
+{{ define "style" }}
+<style type="text/css">
+  #main {
+    max-width: unset;
+  }
+
+  #side,
+  #extra {
+    display: none;
+  }
+</style>
+{{ end }}
+
 {{ define "main" }}
 
 <article>
@@ -5,15 +18,15 @@
     <h1>{{ .Title }}</h1>
     <ul>
       {{ range $items := .Site.Taxonomies.archives.Alphabetical.Reverse }}
-        <li><a class="muted-link" href="{{ $.Site.BaseURL }}archives/{{ .Name | urlize | lower }}">{{ .Name }}</a></li>
-        <ul>
-          {{ range .Pages.ByPublishDate.Reverse }}
-            <li>
-              <a class="muted-link" href="{{ $.Site.BaseURL }}{{ .Section }}">{{ .Section | humanize }}</a>
-              <a class="muted-link" href="{{ .RelPermalink }}">{{.Title}}</a>
-            </li>
-          {{ end }}
-        </ul>
+      <li><a class="muted-link" href="{{ $.Site.BaseURL }}archives/{{ .Name | urlize | lower }}">{{ .Name }}</a></li>
+      <ul>
+        {{ range .Pages.ByPublishDate.Reverse }}
+        <li>
+          <a class="muted-link" href="{{ $.Site.BaseURL }}{{ .Section }}">{{ .Section | humanize }}</a>
+          <a class="muted-link" href="{{ .RelPermalink }}">{{.Title}}</a>
+        </li>
+        {{ end }}
+      </ul>
       {{ end }}
     </ul>
   </section>
