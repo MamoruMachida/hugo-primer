@@ -25,9 +25,7 @@ body {
 #header {
   grid-area: header;
 }
-.UnderlineNav-item.selected {
 
-}
 #main {
   grid-area: main;
   max-width: 782px;
@@ -36,6 +34,7 @@ body {
 #side {
   grid-area: side;
   width: 230px;
+  padding-left: 1rem;
 }
 
 #extra {
@@ -90,7 +89,7 @@ aside {
 /* TOC */
 #toc {
   margin-top: 1.5rem;
-  padding: 0.7rem;
+  padding-left: 0.7rem;
   border-left: 1px solid #e1e4e8
 }
 
@@ -120,15 +119,16 @@ aside {
   text-decoration: none;
 }
 
-@media screen and (max-width: 1012px) {
+@media screen and (max-width: 1096px) {
   #holy {
     display: block;
+    padding: 0 20px;
   }
 
   #header {}
 
   #main {
-    max-width: 1012px;
+    max-width: 1096px;
   }
 
   #side {
@@ -141,7 +141,7 @@ aside {
   }
 
   #extra {
-    max-width: 1012px;
+    max-width: 1096px;
   }
 }
 
